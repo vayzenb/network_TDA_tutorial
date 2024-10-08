@@ -467,7 +467,7 @@ def G_tre(matrix, e):
     matcopy = (np.copy(np.abs(ScdatanGA))) # be careful to always assing  copy of data, 
                                           # othewise will change the data as well
     matcopy[(np.copy(np.abs(ScdatanGA))) <= (1-e)] = 0.0
-    Gfinal = nx.from_numpy_matrix(matcopy[:,:])
+    Gfinal = nx.from_numpy_array(matcopy[:,:])
     
     return Gfinal
 
@@ -495,9 +495,9 @@ def G_den(matrix, d, verbose=False):
     size = len(matrix)
     cutoff = np.ceil(d * (size * (size-1))) # number of links with a given density
     tre = temp[int(cutoff)]
-    G0 = nx.from_numpy_matrix(matrix)
+    G0 = nx.from_numpy_array(matrix)
     G0.remove_edges_from(list(nx.selfloop_edges(G0)))
-    G1 = nx.from_numpy_matrix(matrix)
+    G1 = nx.from_numpy_array(matrix)
     for u,v,a in G0.edges(data=True):
         if (a.get('weight')) <= tre:
             G1.remove_edge(u, v)

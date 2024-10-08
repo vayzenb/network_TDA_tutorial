@@ -1,9 +1,9 @@
 pip
 setuptools
-gudhi==3.3.0
-meshio==4.0.16
-networkx==2.4
-python-louvain==0.13
+gudhi
+meshio
+networkx
+python-louvain
 numpy==1.18.5
 -e git+https://git@github.com/eduardacenteno/nxviz#egg=nxviz
 pandas==1.1.3
